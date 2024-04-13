@@ -1,0 +1,103 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "promela",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#storages"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#entities"
+		}
+		
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.promela",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.block.promela",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.promela",
+					"match": "\\b(\\d+|_)\\b"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.function.promela",
+					"match": "\\b(_last|_pid|_nr_pr|len|printf|run)\\b"
+				},
+				{
+					"name": "variable.name.promela",
+					"match": "\\b(\\w+)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.promela",
+					"match": "\\b(assert|assign|init|active|proctype)\\b"
+				},
+				{
+					"name": "keyword.other.promela",
+					"match": "\\b(atomic|break|skip|else|d_step|do|od|for|in|goto|if|fi|sequence|unless|ltl|of)\\b"
+				},
+				{
+					"name" :"keyword.operator",
+					"match": "(>|<|->|[=+*]|[?]|-|!|:)"
+				},
+				{
+					"name": "keyword.control.preprocessor.spin",
+					"match": "^\\s*#\\w+"
+				}
+			]
+		},
+		"storages": {
+			"patterns": [
+				{
+					"name": "storage.type.promela",
+					"match": "\\b(bit|bool|byte|chan|short|int)\\b"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.promela",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.single.promela",
+					"begin": "'",
+					"end": "'"
+				}
+			]
+		}
+	},
+	"scopeName": "source.pml"
+}

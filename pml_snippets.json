@@ -1,0 +1,55 @@
+{
+    "if": {
+        "prefix": [
+            "if"
+        ],
+        "body": [
+            "if ",
+            ":: $0 ->",
+            "fi"
+        ],
+        "description": "if statement"
+    },
+    "if-else": {
+        "prefix": [
+            "if"
+        ],
+        "body": [
+            "if ",
+            ":: $0 ->",
+            ":: else ->",
+            "fi"
+        ],
+        "description": "if with else statement"
+    },
+    "choice": {
+        "prefix": [
+            ":"
+        ],
+        "body": [
+            ":: $0 ->"
+        ],
+        "description": "option for if/do"
+    },
+    "do": {
+        "prefix": [
+            "do"
+        ],
+        "body": [
+            "do ",
+            ":: $0 ->",
+            "od"
+        ],
+        "description": "do statement"
+    },
+    "proctype": {
+        "prefix": [
+            "proctype"
+        ],
+        "body": [
+            "proctype $0(){ ",
+            "}"
+        ],
+        "description": "proctype statement"
+    }
+}

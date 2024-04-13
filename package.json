@@ -1,0 +1,72 @@
+{
+  "name": "spin-promela",
+  "displayName": "SPIN Promela language",
+  "description": "language support for promela model checking",
+  "publisher": "peacekeeper228",
+  "icon": "img/icon.jpg",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peacekeeper228/spin-promela/"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "promela",
+        "icon": {
+          "light": "img/spin-icon.png",
+          "dark": "img/spin-icon.png"
+        },
+        "aliases": [
+          "promela",
+          "promela"
+        ],
+        "extensions": [
+          ".pml"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "promela",
+        "path": "./pml_snippets.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "promela",
+        "scopeName": "source.pml",
+        "path": "./syntaxes/promela.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}

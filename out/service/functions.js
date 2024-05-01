@@ -10,9 +10,22 @@ function ProcessString(CurString, TabsNumber) {
     for (let key in regulars_1.Regulars) {
         newString = newString.replace(regulars_1.Regulars[key], key);
     }
+    regulars_1.GroupRegular.forEach(element => {
+        let matcher = newString.match(element.regs);
+        if (matcher != undefined) {
+            let replacingPart = "";
+            for (let index = 1; index < matcher.length; index++) {
+                replacingPart += element.replaceTo[index - 1] + matcher[index];
+            }
+            replacingPart += element.replaceTo[matcher.length - 1];
+            newString = newString.replace(matcher[0], replacingPart);
+        }
+        ;
+    });
     if (TabsNumber < 0) {
         return newString.trimStart();
     }
+    ;
     return '\t'.repeat(TabsNumber) + newString.trimStart();
 }
 exports.ProcessString = ProcessString;

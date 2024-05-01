@@ -48,7 +48,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.promela",
-					"match": "\\b(_last|_pid|_nr_pr|len|printf|run)\\b"
+					"match": "\\b(len|printf|run|empty|nempty|nfull|full|eval|enabled|pc_value|_last|_pid|_nr_pr)\\b"
 				},
 				{
 					"name": "variable.name.promela",
@@ -64,11 +64,11 @@
 				},
 				{
 					"name": "keyword.other.promela",
-					"match": "\\b(atomic|break|skip|else|d_step|do|od|for|in|goto|if|fi|sequence|unless|ltl|of)\\b"
+					"match": "\\b(while|atomic|break|skip|else|d_step|do|od|for|in|goto|if|fi|sequence|unless|ltl|of|declaration|goto|receive|never)\\b"
 				},
 				{
 					"name" :"keyword.operator",
-					"match": "(>|<|->|[=+*]|[?]|-|!|:)"
+					"match": "(>|<|->|[=+*]|[?]|-|!|:|%|&|[|]|~|[\/])"
 				},
 				{
 					"name": "keyword.control.preprocessor.spin",

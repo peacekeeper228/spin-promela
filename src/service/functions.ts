@@ -1,4 +1,4 @@
-import { Regulars } from "../data/regulars";
+import { Regulars, GroupRegular } from "../data/regulars";
 
 export function ProcessString(CurString: string, TabsNumber: number) {
 
@@ -6,16 +6,28 @@ export function ProcessString(CurString: string, TabsNumber: number) {
         return CurString
     }
     let newString = CurString
-	for (let key in Regulars) {
-		newString = newString.replace(Regulars[key], key)
-	}
-	if (TabsNumber < 0) {
-		return newString.trimStart();
-	}
-	return '\t'.repeat(TabsNumber) + newString.trimStart();
+    for (let key in Regulars) {
+        newString = newString.replace(Regulars[key], key)
+    }
+    GroupRegular.forEach(element => {
+        let matcher = newString.match(element.regs);
+        if (matcher != undefined) {
+            let replacingPart = "";
+            for (let index = 1; index < matcher.length; index++) {
+                replacingPart += element.replaceTo[index - 1] + matcher[index]
+            }
+            replacingPart += element.replaceTo[matcher.length - 1]
+            newString = newString.replace(matcher[0], replacingPart)
+        };
+
+    });
+    if (TabsNumber < 0) {
+        return newString.trimStart();
+    };
+    return '\t'.repeat(TabsNumber) + newString.trimStart();
 }
 
-export function NumberOfTabsToDecrease(CurString: string){
+export function NumberOfTabsToDecrease(CurString: string) {
     let TabCounter = 0;
     if (CurString.startsWith("od") || CurString.startsWith("fi")) {
         TabCounter += 1;
@@ -26,7 +38,7 @@ export function NumberOfTabsToDecrease(CurString: string){
     return TabCounter
 }
 
-export function NumberOfTabsToIncrease(CurString: string){
+export function NumberOfTabsToIncrease(CurString: string) {
     let TabCounter = 0;
     if (CurString.indexOf("{") >= 0) {
         TabCounter += 1;

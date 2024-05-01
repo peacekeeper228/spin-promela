@@ -28,17 +28,17 @@ No settings for now, just enable it
 By now - there is nothing here :smirk:
 
 ## Release Notes
-
+Primary source - changelog (not here)
 ### 0.0.2
 
-added smarter formatting for buffered channel
-added proper formatting with semicolons and commas
-fixed bugfix with splitting "--" decrement operator
-fixed incorrect highlighting of some symbols
+- added smarter formatting for buffered channel
+- added proper formatting with semicolons and commas
+- fixed bugfix with splitting "--" decrement operator
+- fixed incorrect highlighting of some symbols
 
 ### 0.0.1
 
-Initial release with snippets, code highlighting and code formatting for promela language
+- Initial release with snippets, code highlighting and code formatting for promela language
 
 ### In the end
 

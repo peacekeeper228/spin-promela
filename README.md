@@ -29,6 +29,13 @@ By now - there is nothing here :smirk:
 
 ## Release Notes
 
+### 0.0.2
+
+added smarter formatting for buffered channel
+added proper formatting with semicolons and commas
+fixed bugfix with splitting "--" decrement operator
+fixed incorrect highlighting of some symbols
+
 ### 0.0.1
 
 Initial release with snippets, code highlighting and code formatting for promela language

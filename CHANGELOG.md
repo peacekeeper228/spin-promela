@@ -7,10 +7,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.2] - 2024-05-01
 
 ### Added
-- smarter formatting for reading multiple values from channel like chanName?<name1, name2>
+- smarter formatting for buffered channel
 - proper formatting with semicolons and commas
 ### Fixed
 - bugfix with splitting "--" decrement operator
+- incorrect highlighting of some symbols
 
 ## [0.0.1] - 2024-04-13
 

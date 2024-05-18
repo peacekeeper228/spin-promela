@@ -31,7 +31,11 @@ function ProcessString(CurString, TabsNumber) {
 exports.ProcessString = ProcessString;
 function NumberOfTabsToDecrease(CurString) {
     let TabCounter = 0;
-    if (CurString.startsWith("od") || CurString.startsWith("fi")) {
+    if (CurString.startsWith("fi ") || CurString.startsWith("od ")
+        || CurString.endsWith(" fi") || CurString.endsWith(" od")
+        || CurString.endsWith(" fi;") || CurString.endsWith(" od;")
+        || CurString == "fi;" || CurString == "od;"
+        || CurString == "fi" || CurString == "od") {
         TabCounter += 1;
     }
     if (CurString.indexOf("}") >= 0) {
@@ -45,7 +49,9 @@ function NumberOfTabsToIncrease(CurString) {
     if (CurString.indexOf("{") >= 0) {
         TabCounter += 1;
     }
-    if (CurString.startsWith("if") || CurString.startsWith("do")) {
+    if (CurString.startsWith("if ") || CurString.startsWith("do ")
+        || CurString.endsWith(" if") || CurString.endsWith(" do")
+        || CurString == "do" || CurString == "if") {
         TabCounter += 1;
     }
     return TabCounter;

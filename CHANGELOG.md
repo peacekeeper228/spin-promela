@@ -4,6 +4,12 @@ All notable changes to the "spin-promela" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.3] - 2024-05-18
+
+### Fixed
+- misformatting with variables started with "do" and "if"
+- misformatting with "do" and "if" with no new line
+
 ## [0.0.2] - 2024-05-01
 
 ### Added

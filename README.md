@@ -28,13 +28,15 @@ No settings for now, just enable it
 By now - there is nothing here :smirk:
 
 ## Release Notes
-Primary source - changelog (not here)
+### 0.0.3
+
+- bugfix (see in changelog)
+
 ### 0.0.2
 
 - added smarter formatting for buffered channel
 - added proper formatting with semicolons and commas
-- fixed bugfix with splitting "--" decrement operator
-- fixed incorrect highlighting of some symbols
+- bugfix (see in changelog)
 
 ### 0.0.1
 
